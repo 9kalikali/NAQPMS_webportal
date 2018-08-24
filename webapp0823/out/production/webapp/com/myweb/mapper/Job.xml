@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Job">
+
+    <resultMap id="JobResult" type="com.myweb.model.Job">
+
+        <id property="ID" jdbcType="INTEGER" column="ID"/>
+        <result property="jobId" jdbcType="VARCHAR" column="jobid"/>
+        <result property="userId" jdbcType="VARCHAR" column="userid"/>
+        <result property="status" jdbcType="VARCHAR" column="status"/>
+        <result property="type" jdbcType="VARCHAR" column="type"/>
+        <result property="submitTime" jdbcType="VARCHAR" column="submittime"/>
+        <result property="finishTime" jdbcType="VARCHAR" column="finishtime"/>
+        <result property="resultsPath" jdbcType="VARCHAR" column="resultspath"/>
+        <result property="isRecycled" jdbcType="VARCHAR" column="isrecycled"/>
+
+    </resultMap>
+    <resultMap id="JobDetailResult" type="com.myweb.model.JobDetail">
+        <id property="ID" jdbcType="INTEGER" column="ID"/>
+        <result property="jobId" jdbcType="VARCHAR" column="jobid"/>
+        <result property="maxlon" jdbcType="VARCHAR" column="maxlon"/>
+        <result property="maxlat" jdbcType="VARCHAR" column="maxlat"/>
+        <result property="cenlon" jdbcType="VARCHAR" column="cenlon"/>
+        <result property="cenlat" jdbcType="VARCHAR" column="cenlat"/>
+        <result property="steplength" jdbcType="VARCHAR" column="steplength"/>
+        <result property="startTime" jdbcType="VARCHAR" column="startTime"/>
+        <result property="endTime" jdbcType="VARCHAR" column="endTime"/>
+        <result property="stdout" jdbcType="VARCHAR" column="stdout"/>
+        <result property="stderr" jdbcType="VARCHAR" column="stderr"/>
+        <result property="dir" jdbcType="VARCHAR" column="dir"/>
+        <result property="cpus" jdbcType="VARCHAR" column="cpus"/>
+        <result property="scriptfilenames" jdbcType="VARCHAR" column="scriptfilenames"/>
+        <result property="scriptfilepath" jdbcType="VARCHAR" column="scriptfilepath"/>
+    </resultMap>
+    <!-- 此文件预计填写动态sqk语句 -->
+    <select id="queryJobsByPage" parameterType="java.util.Map" resultMap="JobResult">
+        SELECT * FROM job
+        <where>
+            <if test="job.getUserId() != null and job.getUserId() != ''">
+                AND userid = '${job.getUserId()}'
+            </if>
+            <if test="job.getJobId() != null and job.getJobId() != ''">
+                AND jobid LIKE '%${job.getJobId()}%'
+            </if>
+            <if test="job.getSubmitTime() != null and job.getSubmitTime() != ''">
+                AND submittime LIKE '%${job.getSubmitTime()}%'
+            </if>
+            <if test='job.getStatus() != null and job.getStatus() != ""'>
+                AND status = '${job.getStatus()}'
+            </if>
+            AND isrecycled = '0'
+        </where>
+        ORDER BY ID DESC
+    </select>
+
+    <select id="queryRecycledJobsByPage" parameterType="java.util.Map" resultMap="JobResult">
+        SELECT * FROM job
+        <where>
+            <if test="job.getUserId() != null and job.getUserId() != ''">
+                AND userid = '${job.getUserId()}'
+            </if>
+            <if test="job.getJobId() != null and job.getJobId() != ''">
+                AND jobid LIKE '%${job.getJobId()}%'
+            </if>
+            <if test="job.getSubmitTime() != null and job.getSubmitTime() != ''">
+                AND submittime LIKE '%${job.getSubmitTime()}%'
+            </if>
+            <if test='job.getStatus() != null and job.getStatus() != ""'>
+                AND status = '${job.getStatus()}'
+            </if>
+            AND isrecycled = '1'
+        </where>
+        ORDER BY ID DESC
+    </select>
+
+
+</mapper>

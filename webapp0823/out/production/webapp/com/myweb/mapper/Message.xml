@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Message">
+    <resultMap id="MessageResult" type="com.myweb.model.Message">
+        <id property="ID" column="ID"/>
+        <result property="SendID" column="SendID"/>
+        <result property="RecID" column="RecID"/>
+        <result property="MessageID" column="MessageID"/>
+        <result property="Message" column="Message"/>  <!--  MessageText表字段 -->
+        <result property="PDate" column="Pdate"/>
+        <result property="Status" column="Status"/>
+    </resultMap>
+
+    <select id="queryMessageByPage" parameterType="java.util.Map" resultMap="MessageResult">
+        SELECT a.ID,a.SendID,a.RecID,a.PDate,a.Status,b.Message FROM
+        (SELECT * FROM message WHERE RecID = '0' OR RecID = '${recid}') AS a
+        LEFT JOIN messagetext b ON a.MessageID = b.MessageID ORDER BY a.PDate DESC
+    </select>
+
+    <select id="queryMessageBackByPage" parameterType="java.util.Map" resultMap="MessageResult">
+        SELECT a.ID,a.SendID,a.RecID,a.PDate,a.Status,a.MessageID,b.Message FROM
+            (SELECT * FROM message WHERE SendID = 'system' OR SendID = '${sendid}') AS a
+            LEFT JOIN messagetext b ON a.MessageID = b.MessageID
+        <where>
+            <if test="message.getRecID!=null and message.getRecID!=''">
+                AND RecID LIKE '%${message.getRecID()}%'
+            </if>
+            <if test="message.getPDate()!=null and message.getPDate()!=''">
+                AND PDate LIKE '%${message.getPDate()}%'
+            </if>
+        </where>
+        ORDER BY a.PDate DESC
+    </select>
+
+</mapper>

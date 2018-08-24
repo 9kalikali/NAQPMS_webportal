@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Dataset">
+    <resultMap id="DatasetResult" type="com.myweb.model.Dataset">
+        <result property="datasetId" jdbcType="INTEGER" column="datesetid"/>
+        <result property="categoryId" jdbcType="INTEGER" column="categoryid"/>
+        <result property="name" jdbcType="VARCHAR" column="name"/>
+        <result property="keywords" jdbcType="VARCHAR" column="keywords"/>
+        <result property="frequency" jdbcType="VARCHAR" column="ferquency"/>
+        <result property="shareLevel" jdbcType="VARCHAR" column="sharelevel"/>
+        <result property="startTime" jdbcType="VARCHAR" column="starttime"/>
+        <result property="endTime" jdbcType="VARCHAR" column="endtime"/>
+        <result property="source" jdbcType="VARCHAR" column="source"/>
+        <result property="path" jdbcType="VARCHAR" column="path"/>
+
+        <result property="datasetDesc" jdbcType="VARCHAR" column="datasetdesc"/>
+        <result property="userManual" jdbcType="VARCHAR" column="usermanual"/>
+        <result property="dataType" jdbcType="VARCHAR" column="datatype"/>
+        <result property="dataSize" jdbcType="VARCHAR" column="datasize"/>
+        <result property="resolution" jdbcType="VARCHAR" column="resolution"/>
+        <result property="forecastTime" jdbcType="VARCHAR" column="forecasttime"/>
+        <result property="scope" jdbcType="VARCHAR" column="scope"/>
+    </resultMap>
+</mapper>

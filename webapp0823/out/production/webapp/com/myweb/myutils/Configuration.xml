@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+       Copyright 2009-2017 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- autoMappingBehavior should be set in each test case -->
+    
+    <plugins>
+        <plugin interceptor="com.myweb.interceptor.PageInterceptor"/>
+    </plugins>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC">
+                <property name="" value=""/>
+            </transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/study?useUnicode=true&amp;characterEncoding=UTF8&amp;zeroDateTimeBehavior=convertToNull"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 此处添加对应的mapper -->
+    <mappers>
+        <!-- xml方式注册xml -->
+        <mapper resource = "com/myweb/mapper/User.xml"/>
+        <mapper resource="com/myweb/mapper/Article.xml"/>
+        <mapper resource="com/myweb/mapper/Admin.xml"/>
+        <mapper resource="com/myweb/mapper/Message.xml"/>
+        <mapper resource="com/myweb/mapper/Job.xml" />
+        <mapper resource="com/myweb/mapper/Dataset.xml" />
+        <!-- 接口方式注册接口 -->
+        <mapper class="com.myweb.mapper.UserMapper"/>
+        <mapper class="com.myweb.mapper.ArticleMapper"/>
+        <mapper class="com.myweb.mapper.AdminMapper"/>
+        <mapper class="com.myweb.mapper.MessageMapper"/>
+        <mapper class="com.myweb.mapper.JobMapper" />
+        <mapper class="com.myweb.mapper.DatasetMapper" />
+    </mappers>
+
+</configuration>

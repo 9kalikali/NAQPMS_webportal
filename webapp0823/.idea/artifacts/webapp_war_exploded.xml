@@ -1,0 +1,38 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="webapp:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/webapp_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="webapp/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="webapp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.13.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.3.13.RELEASE" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/ant-1.9.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/ant-launcher-1.9.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/asm-5.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/c3p0-0.9.1-pre6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/cglib-3.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javassist-3.22.0-CR2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jboss-common-jdbc-wrapper.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/log4j-1.2.17.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/log4j-api-2.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/log4j-core-2.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mybatis-3.4.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.45-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/ognl-3.1.15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/slf4j-api-1.7.25.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/slf4j-log4j12-1.7.25.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/standard.jar" />
+          <element id="library" level="project" name="ant-launcher-1.9.6" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/fastjson-1.2.9.jar" />
+          <element id="library" level="project" name="fastjson-1.2.9" />
+          <element id="library" level="project" name="netcdfAll-4.6.11" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

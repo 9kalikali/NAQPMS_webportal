@@ -1,0 +1,262 @@
+.footer-body {
+    margin-bottom: 0px;
+    border-radius: 0px;
+    border: 0px;
+}
+
+div.footer {
+    background: #EC9D53;
+    color: #FFF;
+    /*height:200px;*/
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+
+div.footer h4 {
+    font-weight: bold;
+}
+
+div.footer a {
+    color: #FFF;
+}
+
+.center-border{
+    border-left: 1px solid rgb(180, 180, 180);
+}
+
+.bottom-border{
+    border-bottom: 1px solid rgb(180, 180, 180);
+}
+
+.nav-text{
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+}
+
+.col-text{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.row-text{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.login-left{
+    text-align: center;
+}
+
+.banner-img{
+    max-width:100%;
+    max-height:100%;
+}
+
+.img-box{
+    padding-bottom:10%;
+}
+.img-box img{
+    position:relative;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:70%;
+    border: 1px solid rgb(180, 180, 180);
+    /*margin:auto;*/
+}
+
+.subhead img{
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+}
+
+.lginalert-default{
+    display: none;
+}
+
+ul.article-list li{
+    margin: 10px;
+    border-bottom: 3px dashed #aaaaaa;
+}
+
+ul.article-list li:hover{
+    background-color: #dddddd;
+}
+
+ul.article-list li:last-child{
+    border-bottom: 0px;
+}
+
+ul.article-list li h3{
+    font-weight: bold;
+    color: #5f3f3f;
+}
+
+.article-abstract{
+    font-size: 17px;
+    color: #aaaaaa;
+}
+
+ul.message-list li{
+    margin:10px;
+    border: 1px solid rgb(180,180,180);
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+ul.message-list li:hover{
+    background-color: #dddddd;
+}
+
+ul.message-list li h3{
+    font-weight: bold;
+    color: #5f3f3f;
+    padding-top: 15px;
+}
+
+ul.message-list li p{
+    padding-left: 25px;
+}
+
+.mapcontent{
+    height: 100%;
+    width: 100%;
+    margin:0px;
+}
+
+.maincontent{
+    height: auto;
+    min-height: 768px;
+    margin: 0px;
+}
+
+.draw-panel{
+    margin-left: 5%;
+    margin-top: 7%;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+
+.draw-panel form{
+    padding-bottom: 20px;
+}
+
+.edit-panel{
+    margin-right: 2%;
+    margin-top: 10%;
+}
+
+.edit-panel button{
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.info-panel{
+    border-radius: 10px;
+    background-color: #e9e9e9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    height: 200px;
+    width: 100%;
+}
+
+.round-img{
+}
+.round-img i{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 140px;
+    color: #aaaaaa;
+}
+
+.user-info p{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.user-info p:first-child{
+    padding-top: 30px;
+}
+
+.limit-length{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.listborder{
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 10px;
+}
+.listhead th{
+    text-align: center;
+}
+.listbody td{
+    text-align: center;
+}
+
+#scrollUp {
+    background-image: url("/images/top.png");
+    bottom: 20px;
+    right: 20px;
+    width: 38px;    /* Width of image */
+    height: 38px;   /* Height of image */
+}
+
+/*==================nav tabs================*/
+.navi_head{
+    height:50px;
+    background-color:#d77c24;
+}
+.navi_body{
+    overflow:hidden;
+    height:50px;
+    width: 100%;
+    background:#d7914f;
+    transition:height ease 0.5s;
+    position: absolute;
+    z-index: 999;
+}
+.navi_body:hover{
+    height:130px;
+}
+
+.navi_head>div>span{
+    width:150px;
+    text-align:center;
+    height:130px;
+    display:inline-block;
+    font-weight:bold;
+    color:#FFF;
+    font-size:14px;
+    vertical-align:top;
+}
+
+.navi_head>div>span>p a{
+    color:#FFF;
+    text-decoration:none;
+}
+.navi_head>div>span>p a:hover{
+    color:#FFF;
+    text-decoration:underline;
+}
+
+.navi_title{
+    font-size:16px;
+    line-height:50px;
+    margin-top:0;
+}
+
+.navi_head>div>span:hover{
+    background:rgba(100,100,100,0.2);
+}
+
+/*==================nav tabs end================*/

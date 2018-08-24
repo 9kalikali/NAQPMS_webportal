@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Admin">
+
+
+    <resultMap id="AdminResult" type="com.myweb.model.Admin">
+        <id property="id" jdbcType="INTEGER" column="ID"/>
+        <result property="adminid" jdbcType="VARCHAR" column="adminid"/>
+        <result property="adminpassword" jdbcType="VARCHAR" column="adminpassword"/>
+        <result property="priority" jdbcType="INTEGER" column="priority"/>
+    </resultMap>
+
+    <!-- 此文件预计填写动态sqk语句 -->
+    <select id="queryAdminByPage" parameterType="java.util.Map" resultMap="AdminResult">
+        SELECT * FROM admin
+        <where>
+            <if test="admin.getAdminid() != null and admin.getAdminid() != ''">
+                AND adminid LIKE '%${admin.getAdminid()}%'
+            </if>
+        </where>
+        ORDER BY ID DESC
+    </select>
+
+
+</mapper>
