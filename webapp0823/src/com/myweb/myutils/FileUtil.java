@@ -99,6 +99,14 @@ public class FileUtil {
         return flag;
     }
 
+    /**
+     * 获取服务器的路径
+     * @return
+     */
+    public static String getServerPath(){
+        return System.getProperty("catalina.home");
+    }
+
     public String[] renameFiles(String[] fileNames, Job job){
         for(int i=0;i<fileNames.length;i++){
             fileNames[i] = renameFile(fileNames[i], job);
