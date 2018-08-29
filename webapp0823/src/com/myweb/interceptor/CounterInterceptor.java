@@ -1,6 +1,7 @@
 package com.myweb.interceptor;
 
 
+import com.myweb.myutils.FileUtil;
 import com.myweb.myutils.PageViewStatistics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,9 @@ public class CounterInterceptor implements HandlerInterceptor {
         //System.out.println("This is postHandler!");
         Long l = PageViewStatistics.newInstance().increase(VIEWER);
         log.debug("Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuck:"+l);
+        String pageviews = FileUtil.readTxtFile(PageViewStatistics.TEXT_NAME);
+        log.debug("Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuck:"+pageviews);
+        modelAndView.addObject("pageviews",pageviews.substring(6));
     }
 
     @Override
