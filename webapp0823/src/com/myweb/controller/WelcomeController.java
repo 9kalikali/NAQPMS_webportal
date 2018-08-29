@@ -30,8 +30,8 @@ public class WelcomeController {
     private DataShareService dataShareService;
 
     @RequestMapping(value = {"/","index"})
-    public String pageIndex(){
-        return "index";
+    public ModelAndView pageIndex(){
+        return new ModelAndView("index").addObject("pageviews","0");
     }
 
     /**
