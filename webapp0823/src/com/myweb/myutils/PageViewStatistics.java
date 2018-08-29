@@ -48,8 +48,8 @@ public class PageViewStatistics {
     public PageViewStatistics(){
         creatExecutirService();
         startMonitor();
-        log.debug("ServerPath:"+FileUtil.getServerPath());
-        TEXT_NAME = FileUtil.getServerPath() + "COUNTER.txt";
+        //log.debug("ServerPath:"+FileUtil.getServerPath());
+        TEXT_NAME = FileUtil.getServerPath() + "/COUNTER.txt";
     }
 
     /**
@@ -132,7 +132,7 @@ public class PageViewStatistics {
                     FileUtil.writeTxtFile(TEXT_NAME, content);
                 }
             }
-            log.debug(map2.toString());
+            //log.debug(map2.toString());
         }
     }
 }
