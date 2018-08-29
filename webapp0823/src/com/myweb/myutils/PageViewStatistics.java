@@ -23,6 +23,7 @@ public class PageViewStatistics {
     private static ReentrantLock lock = new ReentrantLock();
     private static int MONITOR_INIT_DELAY_SECONDS = 3;
     private static int MONITOR_INTERVAL_SECONDS = 10;
+    public static String TEXT_NAME = "";
     private static Map<String, Long> map2 = new HashMap<String, Long>();
     private static Logger log = LoggerFactory.getLogger(PageViewStatistics.class);
 
@@ -47,6 +48,8 @@ public class PageViewStatistics {
     public PageViewStatistics(){
         creatExecutirService();
         startMonitor();
+        log.debug("ServerPath:"+FileUtil.getServerPath());
+        TEXT_NAME = FileUtil.getServerPath() + "COUNTER.txt";
     }
 
     /**
@@ -119,6 +122,14 @@ public class PageViewStatistics {
                     map2.put(key, new Long(map2.get(key).longValue() + map.get(key).longValue()));
                 }else{
                     map2.put(key, map.get(key));
+                }
+                //将数量统计写入一个txt文件
+                if(FileUtil.creatFile(TEXT_NAME)){
+                    String content = "count:"+map2.get(key);
+                    FileUtil.writeTxtFile(TEXT_NAME, content);
+                }else{
+                    String content = "count:"+map2.get(key);
+                    FileUtil.writeTxtFile(TEXT_NAME, content);
                 }
             }
             log.debug(map2.toString());
