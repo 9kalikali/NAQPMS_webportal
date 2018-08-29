@@ -4,7 +4,7 @@ import com.myweb.model.Job;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +14,90 @@ public class FileUtil {
 
     private static float GB_BASE = 1024*1024;
     private static Logger log = LoggerFactory.getLogger(FileUtil.class);
+
+    /**
+     * 创建文件
+     * @param filePath
+     * @return
+     */
+    public static boolean creatFile(String filePath){
+        boolean flag = false;
+        try {
+            File newfile = new File(filePath);
+            if(!newfile.exists()){
+                newfile.createNewFile();
+                flag = true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    /**
+     * 读文件
+     * @param filepath
+     * @return
+     */
+    public static String readTxtFile(String filepath){
+        String result = "";
+        File file = new File(filepath);
+        try {
+            InputStreamReader reader = new InputStreamReader(new FileInputStream(file), "UTF-8");
+            BufferedReader br = new BufferedReader(reader);
+            String s = null;
+            while ((s = br.readLine()) != null) {
+                result += s;
+                //System.out.println(s);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * 覆写文件
+     * @param filePath
+     * @param content
+     * @return
+     */
+    public static boolean writeTxtFile(String filePath, String content){
+        boolean flag = false;
+        FileOutputStream fileOutputStream = null;
+        File file = new File(filePath);
+        try {
+            fileOutputStream = new FileOutputStream(file);
+            fileOutputStream.write(content.getBytes("UTF-8"));
+            fileOutputStream.close();
+            flag = true;
+        } catch (Exception e) {
+            log.error("================文件写入失败！==============");
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    /**
+     * 追加文件内容
+     * @param filePath
+     * @param content
+     * @return
+     */
+    public static boolean appendTxtFile(String filePath, String content){
+        boolean flag = false;
+        try {
+            // 构造函数中的第二个参数true表示以追加形式写文件
+            FileWriter fw = new FileWriter(filePath, true);
+            fw.write(content);
+            fw.close();
+            flag = true;
+        } catch (IOException e) {
+            log.error("==============文件写入失败！=============");
+            e.printStackTrace();
+        }
+        return flag;
+    }
 
     public String[] renameFiles(String[] fileNames, Job job){
         for(int i=0;i<fileNames.length;i++){
