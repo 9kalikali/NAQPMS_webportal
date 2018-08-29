@@ -1,6 +1,8 @@
 package com.myweb.myutils;
 
 import com.google.common.util.concurrent.AtomicLongMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -22,6 +24,7 @@ public class PageViewStatistics {
     private static int MONITOR_INIT_DELAY_SECONDS = 3;
     private static int MONITOR_INTERVAL_SECONDS = 10;
     private static Map<String, Long> map2 = new HashMap<String, Long>();
+    private static Logger log = LoggerFactory.getLogger(PageViewStatistics.class);
 
     /**
      * 获取单实例对象
@@ -118,7 +121,7 @@ public class PageViewStatistics {
                     map2.put(key, map.get(key));
                 }
             }
-            System.out.println(map2);
+            log.debug(map2.toString());
         }
     }
 }
