@@ -32,4 +32,12 @@
     <mvc:resources location="/css/" mapping="/css/"/>
     <mvc:resources location="/images/" mapping="/images/"/>
     <mvc:resources location="/js/" mapping="/js/"/>
+
+    <!-- 注册拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/"/>
+            <bean class="com.myweb.interceptor.CounterInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

@@ -95,6 +95,7 @@
 </nav>
 <!-- 副标题 -->
 <div class="subhead">
+    <p class="text-right" style="position: absolute;z-index: 100;right: 100px;top: 150px;font-size: 150%;font-weight: bold">访问量：${pageviews} </p>
     <img src="/images/subhead.png">
 </div>
 <!-- 导航栏 -->
