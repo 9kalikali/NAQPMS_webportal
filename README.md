@@ -1,3 +1,3 @@
-# NAQPMS_webportal
+## NAQPMS_webportal
+本科毕业设计
 
-## 导师分配的一个项目～
