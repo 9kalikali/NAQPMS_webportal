@@ -16,9 +16,9 @@ import java.util.List;
 @Service("datashareService")
 public class DataShareServiceImpl implements DataShareService {
     //测试用1
-    //private static String DATASET_BASE_PATH = "/home/dataset/";
+    private static String DATASET_BASE_PATH = "/home/xinxihua/dataset/";
     //测试用2
-    private static String DATASET_BASE_PATH = "/usr/share/hyrax/data/";
+    //private static String DATASET_BASE_PATH = "/usr/share/hyrax/data/";
 
     @Override
     public ArrayList<DatasetCategory> getFirstDir() {
@@ -83,7 +83,7 @@ public class DataShareServiceImpl implements DataShareService {
         String time = df.format(new Date());// new Date()为获取当前系统时间
         String prefixOfFileName =
                 time.replace("-", "").replace(" ", "").replace(":", "");
-        String targetFilePath = "/home/resource/temp/" + prefixOfFileName + ".tar.gz";
+        String targetFilePath = "/home/xinxihua/resource/temp/" + prefixOfFileName + ".tar.gz";
         String cmd = "tar zcvf " + targetFilePath + " " + s;
         System.out.println(cmd);
         Process process;
