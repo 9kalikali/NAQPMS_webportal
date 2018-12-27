@@ -10,7 +10,8 @@ import java.util.*;
  */
 public class SystemInfo {
 
-    public final static String HPC_IP = "39.106.215.146";
+    //测试用
+    public final static String HPC_IP = "47.92.125.215";
 
     /**
      * 输出CPU使用率
