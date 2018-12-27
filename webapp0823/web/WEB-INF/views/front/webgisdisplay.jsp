@@ -270,7 +270,7 @@
                 canvasLayer.setMap(map);
                 //获取气象数据，开始绘制
                 $.ajax({
-                    url:'http://47.92.125.215:8080/home/display/gfs/20180420gfs.json',
+                    url:'/display/gfs/20180420gfs.json',
                     //url:'/display/20180420gfs.json',    //测试用
                     dataType:'json',
                     beforeSend:function(){
