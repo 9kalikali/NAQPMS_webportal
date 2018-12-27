@@ -128,8 +128,8 @@ public class DisplayServiceImpl implements DisplayService {
         //String sourcename = "/Users/renxuanzhengbo/Documents/ncForDisplay/beforeDA20150101"+time+".nc";
         //String filename = "/Users/renxuanzhengbo/Documents/ncForDisplay/lonlatM.nc";
         //服务器用
-        String sourcename = "/home/display/ncForDisplay/beforeDA20150101"+time+".nc";
-        String filename = "/home/display/ncForDisplay/lonlatM.nc";
+        String sourcename = "/home/xinxihua/display/ncForDisplay/beforeDA20150101"+time+".nc";
+        String filename = "/home/xinxihua/display/ncForDisplay/lonlatM.nc";
         NetcdfFile ncfile = null;
         String jsonString = "";
         List<DataPoint> dataPoints = new ArrayList<DataPoint>();
