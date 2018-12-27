@@ -17,9 +17,9 @@ import java.util.Map;
 @Service("jobService")
 public class JobServiceImpl implements JobService {
 
-    private final static  String PATH = "/home/usersubmit";
+    private final static  String PATH = "/home/xinxihua/usersubmit";
     //计算服务器IP地址，目前为测试用机并不是真实的计算服务器
-    private final static  String HPC_IP = "39.106.215.146";
+    private final static  String HPC_IP = "47.92.125.215";
     private final static int PAGE_SIZE = 6;
 
     /**
